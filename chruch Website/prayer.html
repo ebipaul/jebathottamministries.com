@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Prayer Request — Grace Community Church</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top scrolled" id="mainNavbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><span class="brand-cross">✝</span><span class="brand-name">Grace Community</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
+                <li class="nav-item"><a class="nav-link active" href="prayer.html">Prayer</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-gold" href="index.html#services">Join Service</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="page-hero" style="background-image:linear-gradient(rgba(26,20,16,0.8),rgba(26,20,16,0.8)),url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=80');background-size:cover;background-position:center;">
+    <div class="container">
+        <span class="section-tag">We Pray Together</span>
+        <h1>Prayer Requests</h1>
+        <p>Cast all your anxiety on Him, because He cares for you. — 1 Peter 5:7</p>
+    </div>
+</section>
+
+<section class="prayer-form-section">
+    <div class="container">
+        <div class="row justify-content-center align-items-start g-5">
+
+            <!-- Info -->
+            <div class="col-lg-4">
+                <span class="section-tag">Our Promise</span>
+                <h2 class="section-title mt-2">You Are Not<br><em>Alone</em></h2>
+                <p class="text-muted">Our dedicated prayer team prays over every request submitted. We believe in the power of united prayer and stand with you in faith.</p>
+
+                <div class="mt-4">
+                    <div class="d-flex gap-3 mb-4">
+                        <div style="color:var(--gold);font-size:1.5rem;"><i class="bi bi-shield-check"></i></div>
+                        <div>
+                            <h6 style="font-weight:600;color:var(--deep)">Confidential</h6>
+                            <p class="text-muted small mb-0">Your prayer request is treated with complete confidentiality by our trained prayer team.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-4">
+                        <div style="color:var(--gold);font-size:1.5rem;"><i class="bi bi-clock-history"></i></div>
+                        <div>
+                            <h6 style="font-weight:600;color:var(--deep)">Prayed Within 24 Hours</h6>
+                            <p class="text-muted small mb-0">Every request is prayed over by our team within one business day of submission.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div style="color:var(--gold);font-size:1.5rem;"><i class="bi bi-heart-pulse"></i></div>
+                        <div>
+                            <h6 style="font-weight:600;color:var(--deep)">Pastoral Follow-up</h6>
+                            <p class="text-muted small mb-0">For urgent needs, a pastor or elder will reach out personally to offer support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="col-lg-7">
+                <div class="form-box">
+                    <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--deep);margin-bottom:0.3rem;">Submit Your Request</h3>
+                    <p class="text-muted mb-4" style="font-size:.9rem;">All fields marked * are required. Your privacy is respected.</p>
+
+                    <div id="prayerSuccess" class="alert-success-custom d-none mb-4">
+                        <i class="bi bi-check-circle me-2"></i>
+                        <strong>Your prayer request has been received!</strong> Our team will lift you up in prayer. God hears every prayer.
+                    </div>
+
+                    <form id="prayerForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="prayerName">Full Name *</label>
+                                <input type="text" class="form-control" id="prayerName" placeholder="Your name" required minlength="2">
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="prayerEmail">Email Address</label>
+                                <input type="email" class="form-control" id="prayerEmail" placeholder="For pastoral follow-up">
+                                <div class="invalid-feedback">Please enter a valid email.</div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="prayerCategory">Prayer Category *</label>
+                                <select class="form-select" id="prayerCategory" required>
+                                    <option value="" disabled selected>Select a category</option>
+                                    <option>Health & Healing</option>
+                                    <option>Family & Relationships</option>
+                                    <option>Finance & Work</option>
+                                    <option>Salvation for a Loved One</option>
+                                    <option>Spiritual Growth</option>
+                                    <option>Grief & Loss</option>
+                                    <option>Marriage</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a category.</div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="prayerMessage">Your Prayer Request *</label>
+                                <textarea class="form-control" id="prayerMessage" placeholder="Share what's on your heart. Be as specific as you feel comfortable sharing..." required minlength="20"></textarea>
+                                <div class="invalid-feedback">Please describe your prayer request (at least 20 characters).</div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="prayerConsent" required>
+                                    <label class="form-check-label small text-muted" for="prayerConsent">
+                                        I consent to my prayer request being shared confidentially with the Grace Community prayer team. *
+                                    </label>
+                                    <div class="invalid-feedback">You must consent to proceed.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <button type="submit" class="btn btn-gold btn-lg w-100">
+                                    <i class="bi bi-send me-2"></i>Submit Prayer Request
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4"><div class="footer-brand">✝ Grace Community Church</div><p class="footer-about">A family of believers standing together in prayer and faith.</p></div>
+            <div class="col-lg-2 col-6"><h6 class="footer-heading">Navigate</h6><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="events.html">Events</a></li><li><a href="sermons.html">Sermons</a></li></ul></div>
+            <div class="col-lg-2 col-6"><h6 class="footer-heading">Connect</h6><ul class="footer-links"><li><a href="prayer.html">Prayer</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="col-lg-4"><h6 class="footer-heading">Visit Us</h6><p class="footer-address"><i class="bi bi-geo-alt me-2"></i>123 Grace Avenue, Chennai 600001</p><p class="footer-address"><i class="bi bi-telephone me-2"></i>+91 98765 43210</p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 Grace Community Church.</p></div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
